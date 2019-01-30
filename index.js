@@ -1,7 +1,14 @@
 (function(window, _) {
   window.velvet = window.velvet || {
-    numz: {/* other code */},
+    numz: {},
     phyz: {
+      getDistance: function(pointA, pointB) {
+        //args: pointA = {x:2, y:3}, etc
+        const
+        distanceX = pointB.x - pointA.x,
+        distanceY = pointB.y - pointA.y;
+        return Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+      },
       /**
        * Returns an Object with basic properties utilized in a 
        * 2D physics system. On top of simple physical properties,

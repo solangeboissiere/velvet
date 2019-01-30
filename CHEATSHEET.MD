@@ -26,10 +26,11 @@ To re-release your library to `bower`:
 
 1. Save your changes to the `index.js` file.
 2. Open up the `bower.json` file, and increment the version number, from `0.0.1` to `0.1.0` (this is a minor update). Save the file.
-3. `git add -A`
-4. `git commit -m"* add makeBody method"`
-5. `git tag -a v0.1.0 -m "add makeBody() API"`
-6. `git push origin master --tags`.  **DON'T FORGET --tags
+3. `cd projects/game-lib/`
+4. `git add -A`
+5. `git commit -m"* add makeBody method"`
+6. `git tag -a v0.1.0 -m "add makeBody() API"`
+7. `git push origin master --tags`.  **DON'T FORGET --tags
 
 References:
 
