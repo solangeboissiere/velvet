@@ -1,6 +1,14 @@
 (function(window, _) {
   window.velvet = window.velvet || {
-    numz: {},
+    numz: {
+      degreesToRadians: function(degrees) {
+        return degrees * Math.PI / 180;
+      },
+      radiansToDegrees: function(radians) {
+        return radians * 180 / Math.PI;
+      }
+      
+    },
     phyz: {
       getDistance: function(pointA, pointB) {
         //args: pointA = {x:2, y:3}, etc
