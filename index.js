@@ -18,6 +18,44 @@
       
     },
     phyz: {
+      /**
+ * Updates the x and y properties of a body based on its
+ * velocityX and velocityY, and, updates the rotation of
+ * a body based on its rotationalVelocity.
+ *
+ * @param {Object} body: The body must be an Object 
+ * with x, y, rotation, velocityX, velocityY, and 
+ * rotationalVelocity properties.
+ */
+  updatePosition: function(body) {
+    body.x += body.velocityX;
+    body.y += body.velocityY;
+    body.rotation += body.rotationalVelocity;
+    },
+      /**
+ * Updates the diagonal velocity properties of a body,
+ * taking into account the body's current velocity 
+ * and applying any forces acting against the body
+ * as acceleration on both the x and y axis.
+ * 
+ * NOTE: This method DOES NOT update the position of 
+ * the body, it only updates its velocity.
+ * 
+ * @param {Object} body: The body must be an Object 
+ * with velocityX, velocityY and rotation properties. 
+ * @param {Number} forceOnX: The force acting against
+ * the body on the x axis.
+ * @param {Number} forceOnY: The force acting against
+ * the body on the y axis.
+ */
+    updateVelocity: function(body, forceOnX, forceOnY) {
+    const
+      angle = body.rotation * Math.PI / 180,
+      accelerationOnX  = Math.cos(angle) * forceOnX,
+      accelerationOnY = Math.sin(angle) * forceOnY;
+      body.velocityX += accelerationOnX;
+      body.velocityY += accelerationOnY;
+      },
       getDistance: function(pointA, pointB) {
         //args: pointA = {x:2, y:3}, etc
         const
